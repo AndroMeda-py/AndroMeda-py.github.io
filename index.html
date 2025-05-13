@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bleyz - My Bio</title>
+    <title>Bleyz - Official Bio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Основные стили */
         body {
@@ -33,17 +34,17 @@
         .container {
             text-align: center;
             max-width: 800px;
-            padding: 20px;
+            padding: 40px;
             background: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
-            backdrop-filter: blur(5px);
-            border: 1px solid #8a2be2;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.7);
+            backdrop-filter: blur(10px);
+            border: 2px solid #8a2be2;
         }
 
         /* Неоновый стиль для заголовка */
         h1 {
-            font-size: 3.5em;
+            font-size: 4em;
             margin-bottom: 20px;
             color: #fff;
             text-shadow: 
@@ -73,9 +74,18 @@
 
         /* Стиль для биографии */
         .bio {
-            font-size: 1.2em;
-            line-height: 1.6;
+            font-size: 1.3em;
+            line-height: 1.7;
             margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: #b56aff;
+            text-shadow: 0 0 10px rgba(181, 106, 255, 0.7);
+            font-weight: bold;
         }
 
         /* Стиль для ссылок */
@@ -87,20 +97,46 @@
         }
 
         .link {
-            display: inline-block;
-            padding: 10px 20px;
-            background: rgba(138, 43, 226, 0.2);
+            display: flex;
+            align-items: center;
+            padding: 12px 25px;
+            background: rgba(138, 43, 226, 0.3);
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
             border: 1px solid #8a2be2;
             transition: all 0.3s ease;
+            font-size: 1.1em;
+            text-shadow: 0 0 5px #8a2be2;
+        }
+
+        .link i {
+            margin-right: 10px;
+            font-size: 1.2em;
         }
 
         .link:hover {
-            background: rgba(138, 43, 226, 0.4);
-            box-shadow: 0 0 10px #8a2be2;
-            transform: translateY(-3px);
+            background: rgba(138, 43, 226, 0.5);
+            box-shadow: 0 0 15px #8a2be2;
+            transform: translateY(-5px);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            .bio, .tagline {
+                font-size: 1.1em;
+            }
+            .link {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
@@ -111,47 +147,78 @@
     <!-- Основной контент -->
     <div class="container">
         <h1>Bleyz</h1>
-        <div class="bio">My Bio</div>
+        <div class="tagline">Creator | Gamer | Content Maker</div>
+        <div class="bio">
+            Hi, here is my biography and social networks.
+        </div>
         <div class="links">
-            <a href="https://www.tiktok.com/@bleyztyt" class="link" target="_blank">TikTok</a>
-            <a href="https://web.telegram.org/a/#-1002578728755" class="link" target="_blank">Telegram</a>
-            <a href="https://steamcommunity.com/profiles/76561199174960259/" class="link" target="_blank">Steam</a>
-            <a href="https://www.youtube.com/@ble3yz" class="link" target="_blank">YouTube</a>
+            <a href="https://www.tiktok.com/@bleyztyt" class="link" target="_blank">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+            <a href="https://t.me/bleyzofficial" class="link" target="_blank">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+            <a href="https://steamcommunity.com/profiles/76561199174960259/" class="link" target="_blank">
+                <i class="fab fa-steam"></i> Steam
+            </a>
+            <a href="https://www.youtube.com/@ble3yz" class="link" target="_blank">
+                <i class="fab fa-youtube"></i> YouTube
+            </a>
+            <a href="https://discord.gg/wvdACh5B" class="link" target="_blank">
+                <i class="fab fa-discord"></i> Discord
+            </a>
+            <a href="https://x.com/AndrikonB12738" class="link" target="_blank">
+                <i class="fab fa-twitter"></i> Twitter
+            </a>
         </div>
     </div>
 
     <!-- Скрипт для анимированного космического фона -->
     <script>
-        // Настройка звёздного фона
+        // Улучшенный звёздный фон
         const canvas = document.getElementById('space');
         const ctx = canvas.getContext('2d');
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
 
         const stars = [];
-        const starCount = 500;
+        const starCount = 800;
 
-        // Создаём звёзды
+        // Создаём звёзды с разными размерами и скоростями
         for (let i = 0; i < starCount; i++) {
             stars.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                radius: Math.random() * 1.5,
-                vx: Math.random() * 0.5 - 0.25,
-                vy: Math.random() * 0.5 - 0.25,
-                color: `rgba(138, 43, 226, ${Math.random() * 0.5 + 0.5})`
+                radius: Math.random() * 2,
+                vx: (Math.random() - 0.5) * 0.8,
+                vy: (Math.random() - 0.5) * 0.8,
+                alpha: Math.random() * 0.5 + 0.5
             });
         }
 
         // Анимация звёзд
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Рисуем туманность
+            const gradient = ctx.createRadialGradient(
+                canvas.width/2, canvas.height/2, 0,
+                canvas.width/2, canvas.height/2, canvas.width/1.5
+            );
+            gradient.addColorStop(0, 'rgba(138, 43, 226, 0.1)');
+            gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+            // Рисуем звёзды
             stars.forEach(star => {
                 ctx.beginPath();
                 ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-                ctx.fillStyle = star.color;
+                ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
                 ctx.fill();
 
                 // Движение звёзд
@@ -159,8 +226,10 @@
                 star.y += star.vy;
 
                 // Если звезда улетела за границы, возвращаем её
-                if (star.x < 0 || star.x > canvas.width) star.vx = -star.vx;
-                if (star.y < 0 || star.y > canvas.height) star.vy = -star.vy;
+                if (star.x < 0) star.x = canvas.width;
+                if (star.x > canvas.width) star.x = 0;
+                if (star.y < 0) star.y = canvas.height;
+                if (star.y > canvas.height) star.y = 0;
             });
 
             requestAnimationFrame(animate);
@@ -168,10 +237,8 @@
 
         animate();
 
-        // Реакция на изменение размера окна
         window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            resizeCanvas();
         });
     </script>
 </body>
